@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="知间：为 Obsidian 打造的知识与阅读空间。此页面使用本地示例数据。">
+  <title>知间 · Obsidian 知识空间</title>
+  <link rel="stylesheet" href="../zhijian-obsidian/styles.css">
+  <style>
+    html, body { margin: 0; min-height: 100%; }
+    body { background: #eaf0f8; color: #21394c; font-family: "Segoe UI", "Microsoft YaHei UI", sans-serif; }
+    #app { min-height: 100vh; }
+    .demo-loading { display: grid; min-height: 100vh; place-content: center; gap: 10px; padding: 24px; box-sizing: border-box; }
+    .demo-loading strong { font-size: 24px; font-weight: 600; }
+    .demo-loading p { color: #7b837d; font-size: 14px; }
+    .demo-badge { position: fixed; z-index: 1200; right: 22px; bottom: 14px; display: flex; align-items: center; gap: 8px; padding: 7px 11px; border: 1px solid #d9e1d8; background: rgba(249,251,247,.93); color: #6c786e; border-radius: 8px; font-size: 11px; line-height: 1.4; box-shadow: 0 2px 8px rgba(43,58,44,.03); backdrop-filter: blur(8px); }
+    .demo-badge::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: #779377; }
+    .demo-badge button { border: 0; background: transparent; color: #516d53; font: inherit; padding: 0 0 0 7px; border-left: 1px solid #d9e1d8; cursor: pointer; }
+    .demo-badge button:focus-visible { outline: 2px solid #7f9a7d; outline-offset: 3px; }
+    .demo-badge { background: rgba(235,245,255,.72); border-color: rgba(111,168,195,.25); color: #466c81; backdrop-filter: blur(18px); }
+    .demo-badge::before { background: #55bfce; box-shadow: 0 0 8px #55bfce; }
+    .demo-badge button { color: #347887; border-color: rgba(111,168,195,.25); }
+    body:has(.zj-app[data-theme="dark"]) { background: #081522; color: #dceaf7; }
+    body:has(.zj-app[data-theme="dark"]) .demo-badge { background: rgba(19,35,56,.78); border-color: rgba(126,195,226,.2); color: #b6cbdf; }
+    body:has(.zj-app[data-theme="dark"]) .demo-badge button { color: #9cdadf; border-color: rgba(126,195,226,.2); }
+    .demo-toast { position: fixed; z-index: 1300; left: 50%; bottom: 50px; transform: translateX(-50%); padding: 11px 18px; border-radius: 10px; background: #123f56; box-shadow: 0 5px 20px rgba(3,17,31,.2); color: #fff; font-size: 13px; opacity: 0; pointer-events: none; transition: opacity .18s ease; max-width: min(80vw,480px); }
+    .demo-toast.visible { opacity: 1; }
+    @media (max-width: 640px) { .demo-badge { right: 10px; bottom: 8px; font-size: 10px; } }
+    @media (prefers-reduced-motion: reduce) { .demo-toast { transition: none; } }
+  </style>
+  <script defer src="../zhijian-obsidian/icons.js"></script>
+  <script defer src="../zhijian-obsidian/fx.js"></script>
+  <script defer src="../zhijian-obsidian/fluid.js"></script>
+  <script defer src="../zhijian-obsidian/graph.js"></script>
+  <script defer src="../zhijian-obsidian/carousel.js"></script>
+  <script defer src="../zhijian-obsidian/ui.js"></script>
+  <script defer src="demo.js"></script>
+</head>
+<body>
+  <main id="app" aria-label="知间知识空间">
+    <div class="demo-loading"><strong>知间</strong><p>正在打开你的知识空间…</p></div>
+  </main>
+  <aside class="demo-badge" aria-label="预览说明">
+    <span>示例知识库 · 更改仅保存在本机</span><button type="button" id="demo-reset" title="重置为最初的示例笔记">重置</button>
+  </aside>
+  <div class="demo-toast" id="demo-toast" role="status" aria-live="polite"></div>
+</body>
+</html>
