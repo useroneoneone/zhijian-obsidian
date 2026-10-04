@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>知间 · 宿主样式与长文本回归</title>
+  <style>
+    /* Reproduce the host button defaults that are absent in a plain browser. */
+    button { display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; height: 30px; padding: 4px 12px; }
+    html, body { margin: 0; height: 100%; font-family: "Segoe UI", "Microsoft YaHei UI", sans-serif; }
+    body { display: flex; flex-direction: column; background: #0b192a; }
+    #fixture-result { flex: none; padding: 8px 16px; color: #d4edf5; background: #162f40; font-size: 12px; }
+    #app { flex: 1; min-height: 0; }
+  </style>
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../icons.js"></script>
+  <script defer src="../carousel.js"></script>
+  <script defer src="../ui.js"></script>
+  <script defer src="native-layout.js"></script>
+</head>
+<body>
+  <output id="fixture-result" aria-live="polite">正在检查宿主按钮样式与长文本…</output>
+  <main id="app" class="zhijian-view zj-native" aria-label="宿主样式回归示例"></main>
+</body>
+</html>

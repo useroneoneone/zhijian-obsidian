@@ -1,6 +1,6 @@
 {
   "name": "zhijian-studio",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": true,
   "description": "知间：Obsidian 本地知识与阅读工作台",
   "main": "main.js",

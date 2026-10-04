@@ -231,6 +231,9 @@
 .zj-app .zj-button.secondary, .zj-overlay .zj-button.secondary { border-color: var(--zj-border); background: var(--zj-surface); }
 .zj-app .zj-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 15px; margin-bottom: 25px; }
 .zj-app .zj-stat { position: relative; min-height: 126px; padding: 19px 21px 16px; border: 1px solid var(--zj-border); border-radius: var(--zj-radius); background: var(--zj-surface); text-align: left; transition: border-color 160ms ease, box-shadow 160ms ease; }
+/* Obsidian buttons use inline-flex + nowrap; content cards own their layout. */
+.zj-app button.zj-stat { display: block; min-width: 0; white-space: normal; }
+.zj-app button.zj-card-open { min-width: 0; white-space: normal; overflow-wrap: anywhere; }
 .zj-app .zj-stat:hover { border-color: var(--zj-border-strong); box-shadow: var(--zj-shadow); }
 .zj-app .zj-stat:first-child { border-color: var(--zj-forest); color: var(--zj-on-forest); background: var(--zj-forest); }
 .zj-app .zj-stat-label { margin-bottom: 9px; color: var(--zj-muted); font-size: 12px; }
@@ -700,6 +703,16 @@
 .zj-app .zj-orbit-excerpt { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
 .zj-app .zj-orbit-status { display: flex; align-items: center; gap: 5px; }
 .zj-app .zj-orbit-status .zj-icon { width: 6px; height: 6px; color: var(--zj-accent); }
+.zj-app .zj-orbit-card { justify-content: flex-start; white-space: normal; }
+/* Bound text itself so the glass, shadows and 3D depth stay unclipped. */
+.zj-app .zj-orbit-card > strong,
+.zj-app .zj-orbit-card > .zj-orbit-excerpt {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
 .zj-app .zj-orbit-card:hover, .zj-app .zj-orbit-card:focus-visible { z-index: 5; border-color: var(--zj-accent); box-shadow: 0 19px 44px rgb(22 92 141 / 28%), inset 0 1px 0 var(--zj-glass-highlight), 0 0 22px rgb(74 204 229 / 14%); animation-play-state: paused; }
 .zj-app .zj-panel-heading h2 { font-size: 14px; }
 .zj-app .zj-panel-note { font-size: 11px; }
